@@ -208,11 +208,11 @@ Pokud si přejete načíst do databáze testovací data, je nutno nahrát ješt�
 - K dispozici by mělo být připojení k internetu s rychlostí minimálně 2Mb/s.
 - Pro práci s touto databází je také vhodné mít nainstalovaný prostředek pro práci s SQL -> SQL Server Management Studio pro SQL Server.
 - Základní znalost SQL jazyka je pro efektivní práci s databází nezbytná.
-- Pro správnou konfiguraci a práci s databází je dobré se seznámit s částí ["Import struktury databáze a dat od zadavatele"](https://github.com/tomasnovotnyy/DB-Projekt/blob/main/README.md#import-struktury-datab%C3%A1ze-a-dat-od-zadavatele)
+- Pro správnou konfiguraci a práci s databází je dobré se seznámit s částí [Import struktury databáze a dat od zadavatele](https://github.com/tomasnovotnyy/DB-Projekt/blob/main/README.md#import-struktury-datab%C3%A1ze-a-dat-od-zadavatele)
 
 ## Návod na instalaci a ovládání aplikace
 př:
-Uživatel by si měl vytvořit databázi a nahrát do ní strukturu, dle kroku ["Import struktury databáze a dat od zadavatele"](https://github.com/tomasnovotnyy/DB-Projekt/blob/main/README.md#import-struktury-datab%C3%A1ze-a-dat-od-zadavatele)
+Uživatel by si měl vytvořit databázi a nahrát do ní strukturu, dle kroku [Import struktury databáze a dat od zadavatele](https://github.com/tomasnovotnyy/DB-Projekt/blob/main/README.md#import-struktury-datab%C3%A1ze-a-dat-od-zadavatele)
 Poté se přihlásit předdefinovaným uživatelem, nebo si vytvořit vlastního pomocí SQL příkazů ...
 Měl by upravit konfigurační soubor klientské aplikace, aby odpovídal jeho podmínkám ...
 Dále nahrát obsah složky src na server a navštívit adresu serveru ... 
