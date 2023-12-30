@@ -208,7 +208,7 @@ Pokud si přejete načíst do databáze testovací data, je nutno nahrát ješt�
 - K dispozici by mělo být připojení k internetu s rychlostí minimálně 2Mb/s.
 - Pro práci s touto databází je také vhodné mít nainstalovaný prostředek pro práci s SQL -> SQL Server Management Studio pro SQL Server.
 - Základní znalost SQL jazyka je pro efektivní práci s databází nezbytná.
-- Pro správnou konfiguraci a práci s databází je dobré se seznámit s částí [Import struktury databáze a dat od zadavatele](https://github.com/tomasnovotnyy/DB-Projekt/edit/main/README.md#import-struktury-datab%C3%A1ze-a-dat-od-zadavatele)
+- Pro správnou konfiguraci a práci s databází je dobré se seznámit s částí [Import struktury databáze a dat od zadavatele](197)
 
 ## Návod na instalaci a ovládání aplikace
 př:
