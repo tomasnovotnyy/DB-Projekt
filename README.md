@@ -194,7 +194,7 @@ uživatel	: sa
 heslo		: student
 databáze	: ...
 
-## Import struktury databáze a dat od zadavatele
+# *Import struktury databáze a dat od zadavatele*
 př:
 Nejprve je nutno si vytvořit novou databázi, čistou, bez jakýchkoliv dat...
 Poté do této databáze nahrát soubor, který se nachází v /sql/structure.sql ...
@@ -203,12 +203,12 @@ Pokud si přejete načíst do databáze testovací data, je nutno nahrát ješt�
 # *Klientská aplikace*
 - Databáze neobsahuje klientskou aplikaci.
 
-## Požadavky na spuštění
-př:
-- Oracle DataModeler, rok vydání 2014 a více ... 
-- MSSQL Server, rok vydání 2014 a více ... 
-- připojení k internetu alespoň 2Mb/s ...
-...
+# *Požadavky na spuštění*
+- Pro běh MSSQL Serveru je nutná verze z roku 2014 a novější.
+- K dispozici by mělo být připojení k internetu s rychlostí minimálně 2Mb/s.
+- Pro práci s touto databází je také vhodné mít nainstalovaný prostředek pro práci s SQL -> SQL Server Management Studio pro SQL Server.
+- Základní znalost SQL jazyka je pro efektivní práci s databází nezbytná.
+- Pro správnou konfiguraci a práci s databází je dobré se seznámit s částí [Import struktury databáze a dat od zadavatele](https://github.com/tomasnovotnyy/DB-Projekt/edit/main/README.md#import-struktury-datab%C3%A1ze-a-dat-od-zadavatele)
 
 ## Návod na instalaci a ovládání aplikace
 př:
