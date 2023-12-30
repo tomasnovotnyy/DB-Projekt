@@ -5,7 +5,7 @@
 **Střední průmyslová škola elektrotechnická, Praha 2, Ječná 30**
 **Školní rok 2023/2024**
 ---
-Jméno a příjimeni: Tomáš Novotný
+Jméno a příjmení: Tomáš Novotný
 ---
 Třída: C4b
 ---
