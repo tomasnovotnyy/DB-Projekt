@@ -11,7 +11,7 @@ Třída: C4b
 ---
 
 # *Úvod*
-Problém jsem se rozhodl řešit v MSSQL Server a jako návrhové prostředí jsem využil Microsoft SQL Server Management Studio.
+Problém jsem se rozhodl řešit v MSSQL Server a jako návrhové prostředí jsem využil Oracle DataModeler, ve kterém jsem vytvořil logické a relační schéma.
 
 # *E-R model*
 Konceptuální (logický) model databáze se nachází v /img/Logical.png</br></br>
@@ -185,16 +185,7 @@ END;
 EXECUTE Informace_o_produktu @EAN = '1278567890123';
 ```
 
-## Přístupové údaje do databáze
-př:
-- Přístupové údaje jsou volně konfigurovatelné v souboru /config/... .doc
-pro vývoj byly použity tyto:
-host		: localhost
-uživatel	: sa
-heslo		: student
-databáze	: ...
-
-# *Import struktury databáze a dat od zadavatele*
+## Import struktury databáze a dat od zadavatele
 př:
 Nejprve je nutno si vytvořit novou databázi, čistou, bez jakýchkoliv dat...
 Poté do této databáze nahrát soubor, který se nachází v /sql/structure.sql ...
