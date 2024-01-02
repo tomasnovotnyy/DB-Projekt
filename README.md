@@ -59,7 +59,7 @@ Každá entita v databázi je vybavena uměle vytvořeným primárním klíčem 
 
 *Objednavka*
 - Mnozstvi: Celé číslo, povinný
-- Cena_celkem: Desetinné číslo (max. 10 míst celkem, 2 za desetinnou čárkou)
+- Cena_celkem: Desetinné číslo (max. 10 míst celkem, 2 za desetinnou čárkou), povinný
 
 # *Referenční integrita*
 Návrh obsahuje několik cizích klíčů, které jsou uvedeny níže.</br>
