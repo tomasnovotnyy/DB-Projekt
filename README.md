@@ -185,6 +185,43 @@ END;
 EXECUTE Informace_o_produktu @EAN = '1278567890123';
 ```
 
+# *Transakce*
+- Databáze obsahuje transakci, která začíná deklarováním proměnných pro potřebné informace, jako jsou ID objednávky a produktu, množství a celková cena.
+- Poté se pomocí těchto informací připraví hodnoty pro vložení do tabulky Objednavka.
+- Pokud jsou všechny potřebné informace definovány (nejsou NULL) a transakce obsahuje všechny potřebné informace, vloží data do tabulky 'Objednavka' a vypíše zprávu o úspěšném vložení.
+- Pokud některé informace chybí, vypíše se chybová zpráva a transakce je zrušena pomocí ROLLBACK.
+- V případě úspěchu se transakce potvrdí pomocí COMMIT.
+
+```
+BEGIN TRANSACTION;
+
+DECLARE @DetailObjednavkyID INT;
+DECLARE @ProduktID INT;
+DECLARE @Mnozstvi INT;
+DECLARE @CenaCelkem DECIMAL(10, 2);
+
+-- Hodnoty pro vkládání
+SET @DetailObjednavkyID = (SELECT ID FROM Detail_objednavky WHERE Zakaznik_ID = 2);
+SET @ProduktID = (SELECT ID FROM Produkt WHERE Produkt.EAN = '1278567890123');
+SET @Mnozstvi = 4;
+SET @CenaCelkem = (SELECT Cena FROM Produkt WHERE ID = @ProduktID) * @Mnozstvi;
+
+-- Vložení dat do tabulky Objednavka, pouze pokud jsou všechny informace definovány
+IF (@DetailObjednavkyID IS NOT NULL AND @ProduktID IS NOT NULL AND @Mnozstvi IS NOT NULL AND @CenaCelkem IS NOT NULL)
+BEGIN
+    INSERT INTO Objednavka (Detail_objednavky_ID, Produkt_ID, Mnozstvi, Cena_celkem)
+    VALUES (@DetailObjednavkyID, @ProduktID, @Mnozstvi, @CenaCelkem);
+    PRINT 'Data byla úspěšně vložena do tabulky Objednavka.';
+END
+ELSE
+BEGIN
+    PRINT 'V průběhu transakce někde nastala chyba. Je možné, že některé informace nejsou dostupné pro vložení do tabulky Objednavka.';
+    ROLLBACK TRANSACTION; -- Pokud chybí některé informace, zruší transakci
+END
+
+COMMIT TRANSACTION; -- Potvrzení transakce
+```
+
 # *Import struktury databáze a dat od zadavatele*
 - Nejprve je nutno si vytvořit novou databázi, čistou, bez jakýchkoliv dat.
 - Poté do této databáze nahrát soubor, který se nachází v /sql/structure.sql, který slouží pro nahrání struktury mé databáze.
