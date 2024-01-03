@@ -228,6 +228,73 @@ COMMIT TRANSACTION; -- Potvrzení transakce
 - Pokud si přejete načíst do databáze testovací data, je nutno nahrát ještě soubor, který se nachází v /sql/data.sql.
 - Pro nahrání všech triggerů, pohledů, procedur, transakcí a indexů, je zapotřebí nahrát soubor script.sql, který se nachází v /script.sql.
 
+# *Zálohování*
+Protože k upravení a celkovému vytvoření mé databáze používám databázové servery Microsoft SQL Server, které provozuje škola SPŠE Ječná, tak nemohu nijak zálohovat svou databázi.
+Z toho důvodu se v této části pokusím teoreticky popsat, jak bych postupoval, pokud bych měl možnost mou databázi zálohovat.
+
+### Plná záloha databáze
+Plná záloha obsahuje kompletní data a strukturu databáze v daném čase. Pro provedení plné zálohy bych mohl použít následující příkaz:
+
+```
+BACKUP DATABASE NazevDatabaze
+TO DISK = 'C:\Cesta\Kam\Ulozit\Zalohu\FullZaloha.bak'
+WITH INIT, STATS = 10;
+```
+Tento příkaz vytvoří kompletní zálohu celé databáze do souboru FullZaloha.bak na disku C:\. INIT znamená, že záloha bude přepsána, pokud již existuje soubor se stejným názvem. STATS určuje způsob zobrazení průběhu zálohování.
+
+### Diferenciální záloha databáze
+Diferenciální záloha obsahuje pouze změny od poslední plné zálohy. Pro provedení diferenciální zálohy bych mohl použít následující příkaz:
+```
+BACKUP DATABASE NazevDatabaze
+TO DISK = 'C:\Cesta\Kam\Ulozit\Zalohu\DiferencialniZaloha.bak'
+WITH DIFFERENTIAL, INIT, STATS = 10;
+```
+Tento příkaz vytvoří zálohu obsahující změny od poslední plné zálohy. DIFFERENTIAL označuje, že se jedná o diferenciální zálohu. INIT opět znamená, že záloha bude vytvořena i v případě existence již existujícího souboru se stejným názvem.
+
+Je důležité si uvědomit, že diferenciální zálohy se mohou stávat většími s každou změnou v databázi, protože obsahují změny od poslední plné zálohy. Při obnově záloh bude potřeba nejprve obnovit poslední plnou zálohu a poté diferenciální zálohy v pořadí vytvoření.
+
+# *Nastavení uživatelských oprávnění*
+Protože k upravení a celkovému vytvoření mé databáze používám databázové servery Microsoft SQL Server, které provozuje škola SPŠE Ječná, tak nemohu nijak vytvářet LOGINY ani USERY.
+Z toho důvodu se v této části pokusím teoreticky popsat, jak bych postupoval, pokud bych měl možnost vytvářet LOGINY, USERY a zároveň jak bych pracoval s uživatelskými oprávněními.
+
+### Vytvoření LOGINu
+LOGIN představuje přihlašovací údaje pro přístup do SQL Serveru. Zde je ukázka jak bych postupoval při vytváření LOGINu:
+```
+CREATE LOGIN JmenoLoginu
+WITH PASSWORD = 'HesloLoginu';
+```
+Tímto příkazem bych vytvořil LOGIN s daným jménem a heslem. Samotný LOGIN však nemá přístup k žádné databázi, je to pouze identifikace pro přihlášení do serveru.
+
+### Vytvoření USERa
+USER je propojen s LOGINem a přiděluje specifická práva k databázím. Zde je příklad jak bych postupoval při vytváření USERa propojeného s LOGINem:
+```
+USE NazevDatabaze;
+CREATE USER JmenoUsera FOR LOGIN JmenoLoginu;
+```
+Tímto příkazem bych vytvořil USERa v konkrétní databázi, který by byl spojen s LOGINem. USER by mohl mít různá oprávnění v dané databázi.
+
+### Vytvoření ROLE
+ROLE je skupina oprávnění, která mohou být přidělena USERům. Zde je příklad jak bych postupoval při vytváření ROLE:
+```
+USE NazevDatabaze;
+CREATE ROLE JmenoRole;
+```
+ROLE může obsahovat specifická oprávnění a může být přidělena jednomu nebo více USERům. Poté bych mohl přidělit oprávnění pro tuto ROLI.
+
+### Přidělení oprávnění pro roli
+```
+USE NazevDatabaze;
+GRANT SELECT, INSERT, UPDATE ON SCHEMA::JmenoSchema TO JmenoRole;
+```
+Tímto příkazem bych přidělil roli JmenoRole určitá oprávnění (SELECT, INSERT, UPDATE) na konkrétním schématu (JmenoSchema). Oprávnění mohou být různá a mohou ovlivňovat určité tabulky, pohledy, procedury atd. ve specifickém schématu.
+
+### Přidělení přístupu k určitým objektům přímo
+```
+USE NazevDatabaze;
+GRANT SELECT ON NazevTabulky TO JmenoRole;
+```
+Tímto způsobem bych přidělil roli JmenoRole právo SELECT pro konkrétní tabulku NazevTabulky. Tento způsob přiřazování oprávnění je flexibilní a mohl bych tak přizpůsobit přístup k jednotlivým objektům dle potřeby.
+
 # *Klientská aplikace*
 - Databáze neobsahuje klientskou aplikaci.
 
