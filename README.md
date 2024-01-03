@@ -224,8 +224,9 @@ COMMIT TRANSACTION; -- Potvrzení transakce
 
 # *Import struktury databáze a dat od zadavatele*
 - Nejprve je nutno si vytvořit novou databázi, čistou, bez jakýchkoliv dat.
-- Poté do této databáze nahrát soubor, který se nachází v /sql/structure.sql, který slouží pro nahrání struktury mé databáze.
+- Poté je zapotřebí do této databáze nahrát soubor, který se nachází v /sql/structure.sql, který slouží pro nahrání struktury mé databáze.
 - Pokud si přejete načíst do databáze testovací data, je nutno nahrát ještě soubor, který se nachází v /sql/data.sql.
+- Pro nahrání všech triggerů, pohledů, procedur, transakcí a indexů, je zapotřebí nahrát soubor script.sql, který se nachází v /script.sql.
 
 # *Klientská aplikace*
 - Databáze neobsahuje klientskou aplikaci.
@@ -237,18 +238,9 @@ COMMIT TRANSACTION; -- Potvrzení transakce
 - Základní znalost SQL jazyka je pro efektivní práci s databází nezbytná.
 - Pro správnou konfiguraci a práci s databází je dobré se seznámit s částí [Import struktury databáze a dat od zadavatele](https://github.com/tomasnovotnyy/DB-Projekt/blob/main/README.md#import-struktury-datab%C3%A1ze-a-dat-od-zadavatele)
 
-## Návod na instalaci a ovládání aplikace
-př:
-Uživatel by si měl vytvořit databázi a nahrát do ní strukturu, dle kroku [Import struktury databáze a dat od zadavatele](https://github.com/tomasnovotnyy/DB-Projekt/blob/main/README.md#import-struktury-datab%C3%A1ze-a-dat-od-zadavatele)
-Poté se přihlásit předdefinovaným uživatelem, nebo si vytvořit vlastního pomocí SQL příkazů ...
-Měl by upravit konfigurační soubor klientské aplikace, aby odpovídal jeho podmínkám ...
-Dále nahrát obsah složky src na server a navštívit adresu serveru ... 
-Přihlásit se a může začít pracovat ... 
+# *Závěr*
+Tato databáze představuje komplexní prostředí pro správu informací týkajících se objednávek, produktů a zákazníků. Je navržena tak, aby poskytovala robustní a efektivní řešení pro sledování a správu objednávek a souvisejících informací.
 
-## Závěr
-př:
-Tento systém by po menších úpravách mohl být převeden na jiný databázový systém, 
-klientská aplikace není zabezpečená, 
-počítá se s tím, že klient byl proškolen o používání této aplikace ...
-Nepodařilo se dořešit ...
-Pro další vývoj aplikace by bylo vhodné ...
+Při vývoji této databáze byl kladen důraz na integritu dat, správnost vztahů mezi entitami a optimalizaci pro efektivní manipulaci s informacemi. Databáze obsahuje vhodné omezení a kontrolní mechanismy, které zajišťují konzistenci a bezpečnost dat.
+
+Tato databáze představuje základní kámen pro správu objednávek a souvisejících informací a může být v budoucnu dále rozšiřována a vylepšována.
