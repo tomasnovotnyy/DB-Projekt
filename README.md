@@ -13,6 +13,12 @@ Třída: C4b
 # *Úvod*
 Problém jsem se rozhodl řešit v MSSQL Server a jako návrhové prostředí jsem využil Oracle DataModeler, ve kterém jsem vytvořil logické a relační schéma.
 
+Tato dokumentace poskytuje komplexní přehled a strukturované informace o navržené a implementované relační databázi. Cílem tohoto projektu je vytvoření a správa databáze pro sledování objednávek, zákazníků, produktů a doručení v rámci podniku rohlik.cz.
+
+Databáze obsahuje sadu propojených tabulek a vztahů mezi nimi, umožňující efektivní správu dat a snadný přístup k potřebným informacím. Struktura databáze je navržena tak, aby reflektovala reálné procesy podniku a umožňovala rychlé a přesné dotazování.
+
+Tato dokumentace také zahrnuje detailní popis jednotlivých tabulek, vazeb, pohledů, procedur, triggerů a zabezpečení implementovaných v rámci databáze. Kromě struktury obsahuje také návody a doporučení pro instalaci, správu a zálohování databáze.
+
 # *E-R model*
 Konceptuální (logický) model databáze se nachází v /img/Logical.png</br></br>
 Relační model databáze se nachází v /img/Relational.png</br></br>
