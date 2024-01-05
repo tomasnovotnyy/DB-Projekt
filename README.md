@@ -315,7 +315,7 @@ Tímto způsobem bych přidělil roli JmenoRole právo SELECT pro konkrétní ta
 - Pro správnou konfiguraci a práci s databází je dobré se seznámit s částí [Import struktury databáze a dat od zadavatele](https://github.com/tomasnovotnyy/DB-Projekt/blob/main/README.md#import-struktury-datab%C3%A1ze-a-dat-od-zadavatele)
 
 # *Závěr*
-Tato databáze představuje komplexní prostředí pro správu informací týkajících se objednávek, produktů a zákazníků. Je navržena tak, aby poskytovala robustní a efektivní řešení pro sledování a správu objednávek a souvisejících informací.
+Tato databáze představuje komplexní prostředí pro správu informací týkajících se objednávek, produktů, zákazníků, zaměstnanců, doručení a detailů objednávky. Je navržena tak, aby poskytovala robustní a efektivní řešení pro sledování a správu objednávek a souvisejících informací.
 
 Při vývoji této databáze byl kladen důraz na integritu dat, správnost vztahů mezi entitami a optimalizaci pro efektivní manipulaci s informacemi. Databáze obsahuje vhodné omezení a kontrolní mechanismy, které zajišťují konzistenci a bezpečnost dat.
 
