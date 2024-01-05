@@ -235,7 +235,7 @@ COMMIT TRANSACTION; -- Potvrzení transakce
 - Nejprve je nutno si vytvořit novou databázi, čistou, bez jakýchkoliv dat.
 - Poté je zapotřebí do této databáze nahrát soubor, který se nachází v /sql/structure.sql, který slouží pro nahrání struktury mé databáze.
 - Pokud si přejete načíst do databáze testovací data, je nutno nahrát ještě soubor, který se nachází v /sql/data.sql.
-- Pro nahrání všech triggerů, pohledů, procedur, transakcí a indexů, je zapotřebí nahrát soubor script.sql, který se nachází v /sql/script.sql.
+- Pro nahrání všech triggerů, pohledů, procedur, transakcí a indexů atd., je zapotřebí nahrát soubor script.sql, který se nachází v /sql/script.sql.
 
 # *Zálohování*
 Protože k upravení a celkovému vytvoření mé databáze používám databázové servery Microsoft SQL Server, které provozuje škola SPŠE Ječná, tak nemohu nijak zálohovat svou databázi.
