@@ -19,6 +19,9 @@ Databáze obsahuje sadu propojených tabulek a vztahů mezi nimi, umožňující
 
 Tato dokumentace také zahrnuje detailní popis jednotlivých tabulek, vazeb, pohledů, procedur, triggerů a zabezpečení implementovaných v rámci databáze. Kromě struktury obsahuje také návody a doporučení pro instalaci, správu a zálohování databáze.
 
+# *Zdroj zadání*
+Odkaz na webovou stránku, podle které jsem databázi navrhoval a vytvořil a stručný popis toho, proč jsem si tuto webovou stránku zvolil, lze nalézt v /src/zdroj zadání (tj. odkaz na website nebo doklad).txt
+
 # *E-R model*
 Konceptuální (logický) model databáze se nachází v /img/Logical.png</br></br>
 Relační model databáze se nachází v /img/Relational.png</br></br>
@@ -232,7 +235,7 @@ COMMIT TRANSACTION; -- Potvrzení transakce
 - Nejprve je nutno si vytvořit novou databázi, čistou, bez jakýchkoliv dat.
 - Poté je zapotřebí do této databáze nahrát soubor, který se nachází v /sql/structure.sql, který slouží pro nahrání struktury mé databáze.
 - Pokud si přejete načíst do databáze testovací data, je nutno nahrát ještě soubor, který se nachází v /sql/data.sql.
-- Pro nahrání všech triggerů, pohledů, procedur, transakcí a indexů, je zapotřebí nahrát soubor script.sql, který se nachází v /script.sql.
+- Pro nahrání všech triggerů, pohledů, procedur, transakcí a indexů, je zapotřebí nahrát soubor script.sql, který se nachází v /sql/script.sql.
 
 # *Zálohování*
 Protože k upravení a celkovému vytvoření mé databáze používám databázové servery Microsoft SQL Server, které provozuje škola SPŠE Ječná, tak nemohu nijak zálohovat svou databázi.
