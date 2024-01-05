@@ -231,6 +231,9 @@ END
 COMMIT TRANSACTION; -- Potvrzení transakce
 ```
 
+# *Export databáze*
+Export databáze se nachází v /sql/export.sql.
+
 # *Import struktury databáze a dat od zadavatele*
 - Nejprve je nutno si vytvořit novou databázi, čistou, bez jakýchkoliv dat.
 - Poté je zapotřebí do této databáze nahrát soubor, který se nachází v /sql/structure.sql, který slouží pro nahrání struktury mé databáze.
