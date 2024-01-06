@@ -22,6 +22,10 @@ Tato dokumentace také zahrnuje detailní popis jednotlivých tabulek, vazeb, po
 # *Zdroj zadání*
 Odkaz na webovou stránku, podle které jsem databázi navrhoval a vytvořil a stručný popis toho, proč jsem si tuto webovou stránku zvolil, lze nalézt v /src/zdroj zadání (tj. odkaz na website nebo doklad).txt
 
+# *Tabulka entit a jejich atributů*
+Tabulka všech entit a jejich atributů se nachází v /img/Tabulka.png</br></br>
+![Tabulka](https://github.com/tomasnovotnyy/DB-Projekt/assets/84340580/9b793f64-c7ca-4437-b032-dcaa1f101b24)
+
 # *E-R model*
 Konceptuální (logický) model databáze se nachází v /img/Logical.png</br></br>
 Relační model databáze se nachází v /img/Relational.png</br></br>
